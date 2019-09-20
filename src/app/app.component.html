@@ -41,18 +41,8 @@
       </div>
     </div>
     <div class="col s4">
-      <div class="col s12">
-        <h5>Najlepiej ocenione</h5>
-        <div class="collection">
-          <p class="collection-item" *ngFor="let quotation of sortByBestVotes()">
-            <span class="blue lighten-4 badge">
-              {{ quotation.votes ? quotation.votes : 0 }}
-            </span>
-            {{ quotation.quotation }}<br />
-            <span class="blue-text">{{ quotation.author }}</span>
-          </p>
-        </div>
-      </div>
+      <!-- Używamy property `quotes` do przekazania danych z metody `sortByBestVotes` -->
+      <app-quotes-ranking [quotes]="sortByBestVotes()"></app-quotes-ranking>
     </div>
   </div>
 </div>
