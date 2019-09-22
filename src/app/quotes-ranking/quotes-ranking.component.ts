@@ -1,6 +1,4 @@
-// nowy import Input
 import { Component, Input } from '@angular/core';
-// nowy import
 import { Quotation } from '../models/quotation';
 
 @Component({
@@ -9,7 +7,5 @@ import { Quotation } from '../models/quotation';
   styleUrls: ['./quotes-ranking.component.css'],
 })
 export class QuotesRankingComponent {
-  // nowe pole w klasie
-  // Dekoratora @Input
   @Input() quotes: Quotation[];
 }

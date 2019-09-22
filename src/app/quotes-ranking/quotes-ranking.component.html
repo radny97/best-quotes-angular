@@ -1,7 +1,6 @@
 <div class="col s12">
   <h5>Najlepiej ocenione</h5>
   <div class="collection">
-    <!-- Podstawimy nowe pole 'quotes' -->
     <p class="collection-item" *ngFor="let quotation of quotes">
       <span class="blue lighten-4 badge">
         {{ quotation.votes ? quotation.votes : 0 }}

@@ -9,8 +9,6 @@ import { QUOTES } from './models/data-base';
 })
 export class AppComponent {
   quotes: Quotation[] = QUOTES;
-  isFormVisible = false;
-  quotation: Quotation = { author: '', quotation: '', votes: 0 };
 
   sortByBestVotes(): Quotation[] {
     return [...this.quotes].sort((a, b) => b.votes - a.votes);
@@ -21,12 +19,7 @@ export class AppComponent {
     quotation.votes += value;
   }
 
-  switchFormVisibility(): void {
-    this.isFormVisible = !this.isFormVisible;
-  }
-
-  addQuotation() {
-    this.quotes.unshift(this.quotation);
-    this.quotation = { author: '', quotation: '', votes: 0 };
+  onNewQuotation(quotation: Quotation) {
+    this.quotes.unshift(quotation);
   }
 }
