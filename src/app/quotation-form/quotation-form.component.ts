@@ -7,13 +7,11 @@ import { Quotation } from '../models/quotation';
   styleUrls: ['./quotation-form.component.css'],
 })
 export class QuotationFormComponent {
-  // nowe pole typu EventEmitter
   @Output() newQuotation = new EventEmitter<Quotation>();
-  isFormVisible = true;
+  isFormVisible = false;
   quotation: Quotation = { author: '', quotation: '', votes: 0 };
 
   addQuotation() {
-    // emitujemy nowy event z cytatem
     this.newQuotation.emit(this.quotation);
     this.quotation = { author: '', quotation: '', votes: 0 };
   }
