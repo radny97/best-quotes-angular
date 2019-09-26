@@ -6,9 +6,10 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { QuotesRankingComponent } from './quotes-ranking/quotes-ranking.component';
 import { QuotationFormComponent } from './quotation-form/quotation-form.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, QuotesRankingComponent, QuotationFormComponent],
+  declarations: [AppComponent, NavbarComponent, QuotesRankingComponent, QuotationFormComponent, ButtonComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
