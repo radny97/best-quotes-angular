@@ -3,32 +3,10 @@
   <app-button customClasses="btn-floating teal add-button" (clickButton)="quotationForm.switchFormVisibility()">
     <i class="material-icons">add</i>
   </app-button>
-  <app-quotation-form (newQuotation)="onNewQuotation($event)" #quotationForm>></app-quotation-form>
+  <app-quotation-form (newQuotation)="onNewQuotation($event)" #quotationForm></app-quotation-form>
   <div class="row">
     <div class="col s8">
-      <div class="row">
-        <div class="col s12">
-          <div class="card teal accent-4 hoverable" *ngFor="let quotation of quotes">
-            <div class="card-content white-text">
-              <span class="card-title">
-                {{ quotation.quotation }}
-              </span>
-              {{ quotation.author }}
-            </div>
-            <div class="card-action right-align">
-              <span class="badge grey darken-2 left white-text">
-                {{ quotation.votes ? quotation.votes : 0 }}
-              </span>
-              <app-button customClasses="btn blue mr-5" (clickButton)="addVote(quotation, +1)">
-                <i class="material-icons">exposure_plus_1</i>
-              </app-button>
-              <app-button customClasses="btn red" (clickButton)="addVote(quotation, -1)">
-                <i class="material-icons">exposure_neg_1</i>
-              </app-button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-quotes-list [quotes]="quotes" (vote)="onVote($event)"></app-quotes-list>
     </div>
     <div class="col s4">
       <app-quotes-ranking [quotes]="sortByBestVotes()"></app-quotes-ranking>

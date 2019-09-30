@@ -3,3 +3,8 @@ export interface Quotation {
   quotation: string;
   votes: number;
 }
+
+export interface QuotationEvent {
+  quotation: Quotation;
+  value: number;
+}
