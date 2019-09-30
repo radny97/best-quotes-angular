@@ -18,7 +18,6 @@ export class AppComponent {
     this.quotes.unshift(quotation);
   }
 
-  // Nowa metoda do obsługi głosowania
   onVote(event: QuotationEvent) {
     event.quotation.votes = event.quotation.votes ? event.quotation.votes : 0;
     event.quotation.votes += event.value;
